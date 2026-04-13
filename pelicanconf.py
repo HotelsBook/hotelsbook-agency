@@ -14,9 +14,6 @@ MARKUP = ('md',)
 RELATIVE_URLS = False
 DISPLAY_PAGES_ON_MENU = False
 
-# Configuração para encontrar páginas em content/pages/
-PAGE_PATHS = ['content/pages']
-
 # Menu de navegação (atualizado)
 MENUITEMS = [
     ('Serviços', '/servicos.html'),
