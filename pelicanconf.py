@@ -14,14 +14,14 @@ MARKUP = ('md',)
 RELATIVE_URLS = False
 DISPLAY_PAGES_ON_MENU = False
 
-# Menu de navegação (atualizado)
+# Menu de navegação
 MENUITEMS = [
     ('Serviços', '/servicos.html'),
     ('Sobre', '/sobre.html'),
     ('Contato', '/contato.html'),
 ]
 
-# Arquivos estáticos (para robots.txt, favicon, etc.)
+# Arquivos estáticos
 STATIC_PATHS = ['images', 'extra']
 EXTRA_PATH_METADATA = {
     'extra/robots.txt': {'path': 'robots.txt'},
