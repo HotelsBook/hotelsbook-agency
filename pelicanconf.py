@@ -14,9 +14,16 @@ MARKUP = ('md',)
 RELATIVE_URLS = False
 DISPLAY_PAGES_ON_MENU = False
 
+# Menu de navegação (atualizado)
 MENUITEMS = [
-    ('Agência', '/agencia.html'),
-    ('Analytics', '/analytics.html'),
+    ('Serviços', '/servicos.html'),
     ('Sobre', '/sobre.html'),
-    ('Parcerias', '/parcerias.html'),
+    ('Contato', '/contato.html'),
 ]
+
+# Arquivos estáticos (para robots.txt, favicon, etc.)
+STATIC_PATHS = ['images', 'extra']
+EXTRA_PATH_METADATA = {
+    'extra/robots.txt': {'path': 'robots.txt'},
+    'extra/favicon.ico': {'path': 'favicon.ico'},
+}
