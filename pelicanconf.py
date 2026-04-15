@@ -6,7 +6,7 @@
 AUTHOR = 'Hospped'
 SITENAME = 'Hospped'
 SITESUBTITLE = 'by HotelsBook'  # Usado em meta tags ou rodapé se desejar
-SITEURL = 'https://hospped.github.io'  # ⚠️ Ajuste conforme seu domínio real
+SITEURL = 'https://hotelsbook.github.io/hotelsbook-agency'  # ⚠️ Ajuste conforme seu domínio real
 
 # Caminhos e Estrutura
 PATH = 'content'
