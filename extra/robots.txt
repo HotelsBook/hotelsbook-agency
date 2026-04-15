@@ -43,8 +43,8 @@ Crawl-delay: 1
 # SITEMAP
 # =============================================================================
 # ⚠️ IMPORTANTE: Esta URL deve bater EXATAMENTE com SITEURL em pelicanconf.py
-Sitemap: https://hospped.github.io/sitemap.xml
+Sitemap: https://hotelsbook.github.io/hotelsbook-agency/sitemap.xml
 
 # Alternativas conforme seu domínio real:
-# • Domínio próprio: Sitemap: https://www.hospped.com.br/sitemap.xml
+# • Domínio próprio: Sitemap: https://hotelsbook.github.io/hotelsbook-agency/sitemap.xml
 # • GitHub Pages com path: Sitemap: https://usuario.github.io/hospped/sitemap.xml
