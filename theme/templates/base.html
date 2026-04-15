@@ -46,7 +46,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Favicon (opcional) -->
-  <!-- <link rel="icon" type="image/png" href="/images/favicon-hospped.png"> -->
+  <!-- <link rel="icon" type="image/png" href="./images/favicon-hospped.png"> -->
 </head>
 <body class="bg-hospped-bg text-hospped-text font-sans flex flex-col min-h-screen">
   
@@ -56,7 +56,7 @@
       <div class="flex justify-between h-16 items-center">
         
         <!-- LOGO: Hospped com "PP" em destaque dourado + by HotelsBook discreto -->
-        <a href="{{ SITEURL }}/" class="flex items-center gap-1 group">
+        <a href="./" class="flex items-center gap-1 group">
           <span class="text-2xl font-extrabold tracking-tight transition">
             <span class="text-hospped-primary">Hos</span><span class="text-hospped-accent group-hover:text-hospped-accentHover transition">pp</span><span class="text-hospped-primary">ed</span>
           </span>
@@ -65,15 +65,19 @@
           </span>
         </a>
         
-        <!-- Navegação Desktop -->
+        <!-- Navegação Desktop - Links RELATIVOS para GitHub Pages subpasta -->
         <nav class="hidden md:flex gap-8 text-sm font-medium text-hospped-textLight">
           {% for title, link in MENUITEMS %}
-            <a href="{{ link }}" class="hover:text-hospped-primary transition">{{ title }}</a>
+            {% if link == '/' %}
+              <a href="./" class="hover:text-hospped-primary transition">{{ title }}</a>
+            {% else %}
+              <a href=".{{ link }}" class="hover:text-hospped-primary transition">{{ title }}</a>
+            {% endif %}
           {% endfor %}
         </nav>
         
-        <!-- Botão CTA -->
-        <a href="/contato.html" class="hidden md:inline-block bg-hospped-accent text-hospped-textOnAccent font-semibold px-5 py-2.5 rounded-md text-sm hover:bg-hospped-accentHover transition shadow-sm border border-hospped-accent/20">
+        <!-- Botão CTA - Link RELATIVO -->
+        <a href="./contato.html" class="hidden md:inline-block bg-hospped-accent text-hospped-textOnAccent font-semibold px-5 py-2.5 rounded-md text-sm hover:bg-hospped-accentHover transition shadow-sm border border-hospped-accent/20">
           Fale Conosco
         </a>
         
@@ -92,7 +96,7 @@
     {% block content %}{% endblock %}
   </main>
 
-  <!-- Footer -->
+  <!-- Footer - Links RELATIVOS -->
   <footer class="bg-hospped-primary text-hospped-textOnPrimary py-14">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-10">
       
@@ -113,9 +117,9 @@
       <div>
         <h4 class="font-bold mb-4 text-emerald-100">Serviços</h4>
         <ul class="space-y-2.5 text-sm text-emerald-100/80">
-          <li><a href="/servicos.html" class="hover:text-white transition hover:translate-x-0.5 inline-block">Viagens Corporativas</a></li>
-          <li><a href="/servicos.html" class="hover:text-white transition hover:translate-x-0.5 inline-block">Mobilidade Acadêmica</a></li>
-          <li><a href="/servicos.html" class="hover:text-white transition hover:translate-x-0.5 inline-block">Gestão de Gastos</a></li>
+          <li><a href="./servicos.html" class="hover:text-white transition hover:translate-x-0.5 inline-block">Viagens Corporativas</a></li>
+          <li><a href="./servicos.html" class="hover:text-white transition hover:translate-x-0.5 inline-block">Mobilidade Acadêmica</a></li>
+          <li><a href="./servicos.html" class="hover:text-white transition hover:translate-x-0.5 inline-block">Gestão de Gastos</a></li>
         </ul>
       </div>
       
@@ -123,8 +127,8 @@
       <div>
         <h4 class="font-bold mb-4 text-emerald-100">Contato</h4>
         <ul class="space-y-2.5 text-sm text-emerald-100/80">
-          <li><a href="/contato.html" class="hover:text-white transition hover:translate-x-0.5 inline-block">Solicitar Cotação</a></li>
-          <li><a href="/contato.html" class="hover:text-white transition hover:translate-x-0.5 inline-block">Seja um Parceiro</a></li>
+          <li><a href="./contato.html" class="hover:text-white transition hover:translate-x-0.5 inline-block">Solicitar Cotação</a></li>
+          <li><a href="./contato.html" class="hover:text-white transition hover:translate-x-0.5 inline-block">Seja um Parceiro</a></li>
           <li><a href="mailto:contato@hospped.com.br" class="hover:text-white transition hover:translate-x-0.5 inline-block">contato@hospped.com.br</a></li>
         </ul>
       </div>
