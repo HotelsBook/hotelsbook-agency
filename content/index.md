@@ -11,7 +11,7 @@ Status: published
   "@type": "TravelAgency",
   "name": "Hospped",
   "alternateName": "Hospped by HotelsBook",
-  "url": "https://hospped.github.io",
+  "url": "https://hotelsbook.github.io/hotelsbook-agency",
   "description": "Agência de reservas corporativas e acadêmicas com atendimento humano, negociação direta e economia de até 30%.",
   "areaServed": {"@type": "Country", "name": "Brasil"},
   "makesOffer": {
@@ -33,7 +33,7 @@ Status: published
 <!-- HERO SECTION: PROPOSTA DE VALOR CLARA - Deep Jade -->
 <section class="bg-[#2A5D5E] text-white py-24 px-4 relative overflow-hidden">
   <!-- Placeholder para imagem de fundo futura -->
-  <!-- <div class="absolute inset-0 opacity-10" style="background-image: url('/images/hero-bg.jpg'); background-size: cover; background-position: center;"></div> -->
+  <!-- <div class="absolute inset-0 opacity-10" style="background-image: url('./images/hero-bg.jpg'); background-size: cover; background-position: center;"></div> -->
   
   <div class="max-w-5xl mx-auto text-center relative z-10">
     <span class="inline-block bg-[#D4AF37]/20 text-[#D4AF37] text-sm font-semibold px-4 py-2 rounded-full mb-6 border border-[#D4AF37]/30">Atendimento em todo o Brasil</span>
@@ -45,10 +45,12 @@ Status: published
       Sua empresa ou instituição economiza até 30% com gestão personalizada e validação prévia de cada reserva.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="/contato.html" class="bg-[#D4AF37] hover:bg-[#b8962e] text-[#333333] font-bold py-4 px-10 rounded-lg transition duration-300 shadow-lg text-lg border border-[#D4AF37]/30">
+      <!-- ✅ Link relativo para contato -->
+      <a href="./contato.html" class="bg-[#D4AF37] hover:bg-[#b8962e] text-[#333333] font-bold py-4 px-10 rounded-lg transition duration-300 shadow-lg text-lg border border-[#D4AF37]/30">
         Solicitar Cotação Gratuita
       </a>
-      <a href="/servicos.html" class="border-2 border-white text-white hover:bg-white hover:text-[#2A5D5E] font-semibold py-4 px-10 rounded-lg transition duration-300 text-lg">
+      <!-- ✅ Link relativo para serviços -->
+      <a href="./servicos.html" class="border-2 border-white text-white hover:bg-white hover:text-[#2A5D5E] font-semibold py-4 px-10 rounded-lg transition duration-300 text-lg">
         Conhecer Serviços
       </a>
     </div>
@@ -156,7 +158,8 @@ Status: published
     </div>
     
     <div class="text-center mt-12">
-      <a href="/servicos.html" class="text-[#2A5D5E] font-semibold hover:text-[#D4AF37] hover:underline inline-flex items-center transition">
+      <!-- ✅ Link relativo para serviços -->
+      <a href="./servicos.html" class="text-[#2A5D5E] font-semibold hover:text-[#D4AF37] hover:underline inline-flex items-center transition">
         Ver detalhes do fluxo completo
         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
       </a>
@@ -181,7 +184,8 @@ Status: published
         <li class="flex items-start"><span class="text-[#D4AF37] mr-2 mt-1">▸</span> Eventos corporativos, congressos e feiras</li>
         <li class="flex items-start"><span class="text-[#D4AF37] mr-2 mt-1">▸</span> Relatórios de gastos por centro de custo</li>
       </ul>
-      <a href="/contato.html" class="inline-block text-[#2A5D5E] font-semibold hover:text-[#D4AF37] hover:underline text-sm transition">Solicitar proposta corporativa →</a>
+      <!-- ✅ Link relativo para contato -->
+      <a href="./contato.html" class="inline-block text-[#2A5D5E] font-semibold hover:text-[#D4AF37] hover:underline text-sm transition">Solicitar proposta corporativa →</a>
     </div>
     
     <!-- ACADÊMICO -->
@@ -196,7 +200,8 @@ Status: published
         <li class="flex items-start"><span class="text-[#D4AF37] mr-2 mt-1">▸</span> Grupos para eventos, visitas técnicas e empresas júnior</li>
         <li class="flex items-start"><span class="text-[#D4AF37] mr-2 mt-1">▸</span> Emissão de NF para prestação de contas institucional</li>
       </ul>
-      <a href="/contato.html" class="inline-block text-[#2A5D5E] font-semibold hover:text-[#D4AF37] hover:underline text-sm transition">Propor parceria institucional →</a>
+      <!-- ✅ Link relativo para contato -->
+      <a href="./contato.html" class="inline-block text-[#2A5D5E] font-semibold hover:text-[#D4AF37] hover:underline text-sm transition">Propor parceria institucional →</a>
     </div>
     
   </div>
@@ -222,7 +227,8 @@ Status: published
     <p class="text-xl text-emerald-50/90 mb-8 max-w-2xl mx-auto">
       Solicite uma análise gratuita das suas demandas atuais e receba uma proposta com tarifas negociadas em até 24 horas úteis.
     </p>
-    <a href="/contato.html" class="bg-[#D4AF37] hover:bg-[#b8962e] text-[#333333] font-bold py-4 px-12 rounded-lg transition inline-block shadow-lg text-lg border border-[#D4AF37]/30">
+    <!-- ✅ Link relativo para contato -->
+    <a href="./contato.html" class="bg-[#D4AF37] hover:bg-[#b8962e] text-[#333333] font-bold py-4 px-12 rounded-lg transition inline-block shadow-lg text-lg border border-[#D4AF37]/30">
       Solicitar Cotação Gratuita
     </a>
     <p class="text-emerald-100/80 text-sm mt-6">Sem compromisso • Sem fidelidade • Resposta garantida</p>
