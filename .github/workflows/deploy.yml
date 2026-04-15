@@ -1,33 +1,53 @@
-name: Build and Deploy
+name: Build and Deploy Hospped Site
+
 on:
   push:
     branches: [ main ]
-  workflow_dispatch:
+  workflow_dispatch: # Permite acionar manualmente pelo botão no GitHub
 
+# Permissões necessárias para o GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Concorrência: cancela builds anteriores se um novo for iniciado
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout do Código
         uses: actions/checkout@v4
       
-      - name: Setup Python
+      - name: Configurar Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      - name: Cache de dependências do Pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
       
-      - name: Build site
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Limpar pasta de saída anterior
+        run: rm -rf output
+      
+      - name: Gerar o Site (Pelican Build)
         run: pelican content -o output -s pelicanconf.py
       
-      - name: Upload artifact
+      - name: Upload do Artifact (Páginas)
         uses: actions/upload-pages-artifact@v3
         with:
           path: './output'
@@ -39,6 +59,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Publicar no GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

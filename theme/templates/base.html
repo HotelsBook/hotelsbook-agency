@@ -3,8 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page and page.title %}{{ page.title }}{% else %}{{ SITENAME }}{% endif %}</title>
-  <meta name="description" content="Agência de reservas corporativas e estudantis com atendimento humano e negociação direta.">
+  
+  <!-- Título Dinâmico com Nova Marca -->
+  <title>{% if page and page.title %}{{ page.title }}{% else %}Hospped - Gestão de Viagens Corporativas e Acadêmicas{% endif %}</title>
+  
+  <!-- Meta Description Atualizada -->
+  <meta name="description" content="{% if page and page.description %}{{ page.description }}{% else %}Agência de reservas com atendimento humano e negociação direta. Economia de até 30% em viagens corporativas e acadêmicas.{% endif %}">
+  
+  <!-- Open Graph / Social Sharing (Opcional mas recomendado) -->
+  <meta property="og:title" content="{% if page and page.title %}{{ page.title }}{% else %}Hospped{% endif %}">
+  <meta property="og:description" content="Gestão de viagens corporativas e acadêmicas com atendimento humano.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ SITEURL }}/{% if page and page.url %}{{ page.url }}{% endif %}">
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -13,9 +23,15 @@
       theme: {
         extend: {
           colors: {
-            navy: '#0A2540',
-            lightblue: '#4A90E2',
-            accent: '#F59E0B', /* Cor de destaque para CTAs */
+            // 🎨 Paleta Oficial Hospped
+            hospped: {
+              primary: '#4B0082',        // Roxo Indigo: autoridade, inovação
+              primaryHover: '#3a0066',   // Hover do roxo
+              secondary: '#20B2AA',      // Turquesa: energia, confiança
+              secondaryHover: '#1a9a8f', // Hover do turquesa
+              light: '#f5f3ff',          // Fundo suave roxo
+              text: '#1e1b4b',           // Texto escuro para contraste
+            }
           },
           fontFamily: {
             sans: ['Inter', 'system-ui', 'sans-serif'],
@@ -25,6 +41,9 @@
     }
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Favicon (opcional - substitua pelo seu) -->
+  <!-- <link rel="icon" type="image/png" href="/images/favicon-hospped.png"> -->
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
   
@@ -32,13 +51,35 @@
   <header class="bg-white shadow-sm sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16 items-center">
-        <a href="/" class="text-2xl font-bold text-navy tracking-tight">HotelsBook<span class="text-lightblue">.agency</span></a>
+        
+        <!-- LOGO: Hospped em destaque + by HotelsBook discreto -->
+        <a href="{{ SITEURL }}/" class="flex items-center gap-1 group">
+          <span class="text-2xl font-extrabold text-hospped-primary tracking-tight group-hover:text-hospped-primaryHover transition">
+            Hospped
+          </span>
+          <span class="text-sm font-normal text-gray-400 group-hover:text-gray-500 transition self-end mb-1">
+            by HotelsBook
+          </span>
+        </a>
+        
+        <!-- Navegação Desktop -->
         <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
           {% for title, link in MENUITEMS %}
-            <a href="{{ link }}" class="hover:text-navy transition">{{ title }}</a>
+            <a href="{{ link }}" class="hover:text-hospped-primary transition">{{ title }}</a>
           {% endfor %}
         </nav>
-        <a href="/parcerias.html" class="hidden md:inline-block bg-navy text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-900 transition">Fale Conosco</a>
+        
+        <!-- Botão CTA -->
+        <a href="/contato.html" class="hidden md:inline-block bg-hospped-secondary text-hospped-primary font-semibold px-4 py-2 rounded-md text-sm hover:bg-hospped-secondaryHover transition shadow-sm">
+          Fale Conosco
+        </a>
+        
+        <!-- Menu Mobile (Hambúrguer) - Opcional: pode ser expandido com JS -->
+        <button class="md:hidden text-hospped-primary p-2" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
     </div>
   </header>
@@ -49,31 +90,65 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-navy text-white py-12">
+  <footer class="bg-hospped-primary text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
+      
+      <!-- Branding + Descrição -->
       <div class="md:col-span-2">
-        <h3 class="text-xl font-bold mb-4">HotelsBook Agency</h3>
-        <p class="text-gray-400 text-sm max-w-md">Gestão inteligente de viagens corporativas e acadêmicas. Unimos tecnologia e atendimento humano para oferecer as melhores condições do mercado.</p>
+        <div class="flex items-center gap-1 mb-4">
+          <span class="text-xl font-extrabold text-white">Hospped</span>
+          <span class="text-xs font-normal text-purple-200 self-end mb-1">by HotelsBook</span>
+        </div>
+        <p class="text-purple-100 text-sm max-w-md leading-relaxed">
+          Gestão inteligente de viagens corporativas e acadêmicas. Unimos tecnologia e atendimento humano para oferecer as melhores condições do mercado.
+        </p>
       </div>
+      
+      <!-- Serviços -->
       <div>
-        <h4 class="font-bold mb-4 text-gray-200">Serviços</h4>
-        <ul class="space-y-2 text-sm text-gray-400">
-          <li><a href="/agencia.html" class="hover:text-white">Reservas Corporativas</a></li>
-          <li><a href="/agencia.html" class="hover:text-white">Viagens Estudantis</a></li>
-          <li><a href="/analytics.html" class="hover:text-white">Gestão de Gastos</a></li>
+        <h4 class="font-bold mb-4 text-purple-100">Serviços</h4>
+        <ul class="space-y-2 text-sm text-purple-200">
+          <li><a href="/servicos.html" class="hover:text-white transition">Viagens Corporativas</a></li>
+          <li><a href="/servicos.html" class="hover:text-white transition">Mobilidade Acadêmica</a></li>
+          <li><a href="/servicos.html" class="hover:text-white transition">Gestão de Gastos</a></li>
         </ul>
       </div>
+      
+      <!-- Contato -->
       <div>
-        <h4 class="font-bold mb-4 text-gray-200">Contato</h4>
-        <ul class="space-y-2 text-sm text-gray-400">
-          <li><a href="/parcerias.html" class="hover:text-white">Seja um Parceiro</a></li>
-          <li><a href="/parcerias.html" class="hover:text-white">Solicitar Cotação</a></li>
+        <h4 class="font-bold mb-4 text-purple-100">Contato</h4>
+        <ul class="space-y-2 text-sm text-purple-200">
+          <li><a href="/contato.html" class="hover:text-white transition">Solicitar Cotação</a></li>
+          <li><a href="/contato.html" class="hover:text-white transition">Seja um Parceiro</a></li>
+          <li><a href="mailto:contato@hospped.com.br" class="hover:text-white transition">contato@hospped.com.br</a></li>
         </ul>
       </div>
     </div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-gray-700 text-center text-xs text-gray-500">
-      &copy; 2024 HotelsBook Agency. Todos os direitos reservados.
+    
+    <!-- Barra Inferior -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-purple-700/50 text-center text-xs text-purple-300">
+      &copy; 2026 Hospped by HotelsBook. Todos os direitos reservados.
     </div>
   </footer>
+
+  <!-- Script opcional para menu mobile (pode ser expandido depois) -->
+  <script>
+    // Toggle simples para menu mobile (se quiser implementar)
+    document.querySelector('button[aria-label="Menu"]')?.addEventListener('click', function() {
+      const nav = document.querySelector('nav');
+      if (nav) {
+        nav.classList.toggle('hidden');
+        nav.classList.toggle('md:flex');
+        nav.classList.toggle('absolute');
+        nav.classList.toggle('top-16');
+        nav.classList.toggle('left-0');
+        nav.classList.toggle('right-0');
+        nav.classList.toggle('bg-white');
+        nav.classList.toggle('p-4');
+        nav.classList.toggle('shadow-lg');
+        nav.classList.toggle('flex-col');
+      }
+    });
+  </script>
 </body>
 </html>

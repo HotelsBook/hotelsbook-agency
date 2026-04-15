@@ -1,4 +1,27 @@
+# Robots.txt - Hospped by HotelsBook
+# Última atualização: Abril 2026
+
+# Permitir todos os crawlers
 User-agent: *
 Allow: /
 
-Sitemap: https://hotelsbook.github.io/hotelsbook-agency/sitemap.xml
+# Bloquear áreas administrativas ou de desenvolvimento (se existirem)
+Disallow: /admin/
+Disallow: /drafts/
+Disallow: /theme/
+Disallow: /*.json$
+
+# Crawlers específicos (opcional - otimização)
+# Googlebot: pode rastrear tudo para melhor indexação
+User-agent: Googlebot
+Allow: /
+
+# Bingbot: também permitido
+User-agent: Bingbot
+Allow: /
+
+# Atraso entre requisições (politeness - opcional)
+Crawl-delay: 1
+
+# Sitemap atualizado para a nova marca
+Sitemap: https://hospped.github.io/sitemap.xml
