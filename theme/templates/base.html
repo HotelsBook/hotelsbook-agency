@@ -10,7 +10,7 @@
   <!-- Meta Description Atualizada -->
   <meta name="description" content="{% if page and page.description %}{{ page.description }}{% else %}Agência de reservas com atendimento humano e negociação direta. Economia de até 30% em viagens corporativas e acadêmicas.{% endif %}">
   
-  <!-- Open Graph / Social Sharing (Opcional mas recomendado) -->
+  <!-- Open Graph / Social Sharing -->
   <meta property="og:title" content="{% if page and page.title %}{{ page.title }}{% else %}Hospped{% endif %}">
   <meta property="og:description" content="Gestão de viagens corporativas e acadêmicas com atendimento humano.">
   <meta property="og:type" content="website">
@@ -23,14 +23,17 @@
       theme: {
         extend: {
           colors: {
-            // 🎨 Paleta Oficial Hospped
+            // 🎨 Paleta Jade Imperial - Hospped (Hidden Gem 2026)
             hospped: {
-              primary: '#4B0082',        // Roxo Indigo: autoridade, inovação
-              primaryHover: '#3a0066',   // Hover do roxo
-              secondary: '#20B2AA',      // Turquesa: energia, confiança
-              secondaryHover: '#1a9a8f', // Hover do turquesa
-              light: '#f5f3ff',          // Fundo suave roxo
-              text: '#1e1b4b',           // Texto escuro para contraste
+              primary: '#2A5D5E',        // Deep Jade: serenidade, exclusividade
+              primaryHover: '#1f4a4b',   // Hover do jade
+              accent: '#D4AF37',         // Soft Gold: botões, CTAs, destaques
+              accentHover: '#b8962e',    // Hover do dourado
+              bg: '#F0F0E9',             // Cloud Dancer: fundo quente
+              text: '#333333',           // Charcoal: texto principal
+              textLight: '#666666',      // Texto secundário
+              textOnPrimary: '#FFFFFF',  // Texto sobre jade
+              textOnAccent: '#333333',   // Texto sobre dourado
             }
           },
           fontFamily: {
@@ -42,39 +45,39 @@
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Favicon (opcional - substitua pelo seu) -->
+  <!-- Favicon (opcional) -->
   <!-- <link rel="icon" type="image/png" href="/images/favicon-hospped.png"> -->
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
+<body class="bg-hospped-bg text-hospped-text font-sans flex flex-col min-h-screen">
   
   <!-- Header -->
-  <header class="bg-white shadow-sm sticky top-0 z-50">
+  <header class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-hospped-primary/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16 items-center">
         
-        <!-- LOGO: Hospped em destaque + by HotelsBook discreto -->
+        <!-- LOGO: Hospped com "PP" em destaque dourado + by HotelsBook discreto -->
         <a href="{{ SITEURL }}/" class="flex items-center gap-1 group">
-          <span class="text-2xl font-extrabold text-hospped-primary tracking-tight group-hover:text-hospped-primaryHover transition">
-            Hospped
+          <span class="text-2xl font-extrabold tracking-tight transition">
+            <span class="text-hospped-primary">Hos</span><span class="text-hospped-accent group-hover:text-hospped-accentHover transition">pp</span><span class="text-hospped-primary">ed</span>
           </span>
-          <span class="text-sm font-normal text-gray-400 group-hover:text-gray-500 transition self-end mb-1">
+          <span class="text-xs font-normal text-hospped-textLight group-hover:text-hospped-text transition self-end mb-1">
             by HotelsBook
           </span>
         </a>
         
         <!-- Navegação Desktop -->
-        <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+        <nav class="hidden md:flex gap-8 text-sm font-medium text-hospped-textLight">
           {% for title, link in MENUITEMS %}
             <a href="{{ link }}" class="hover:text-hospped-primary transition">{{ title }}</a>
           {% endfor %}
         </nav>
         
         <!-- Botão CTA -->
-        <a href="/contato.html" class="hidden md:inline-block bg-hospped-secondary text-hospped-primary font-semibold px-4 py-2 rounded-md text-sm hover:bg-hospped-secondaryHover transition shadow-sm">
+        <a href="/contato.html" class="hidden md:inline-block bg-hospped-accent text-hospped-textOnAccent font-semibold px-5 py-2.5 rounded-md text-sm hover:bg-hospped-accentHover transition shadow-sm border border-hospped-accent/20">
           Fale Conosco
         </a>
         
-        <!-- Menu Mobile (Hambúrguer) - Opcional: pode ser expandido com JS -->
+        <!-- Menu Mobile (Hambúrguer) -->
         <button class="md:hidden text-hospped-primary p-2" aria-label="Menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -90,50 +93,51 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-hospped-primary text-white py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
+  <footer class="bg-hospped-primary text-hospped-textOnPrimary py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-10">
       
       <!-- Branding + Descrição -->
       <div class="md:col-span-2">
         <div class="flex items-center gap-1 mb-4">
-          <span class="text-xl font-extrabold text-white">Hospped</span>
-          <span class="text-xs font-normal text-purple-200 self-end mb-1">by HotelsBook</span>
+          <span class="text-xl font-extrabold text-white">
+            Hos<span class="text-hospped-accent">pp</span>ed
+          </span>
+          <span class="text-xs font-normal text-emerald-100/80 self-end mb-1">by HotelsBook</span>
         </div>
-        <p class="text-purple-100 text-sm max-w-md leading-relaxed">
+        <p class="text-emerald-50/90 text-sm max-w-md leading-relaxed">
           Gestão inteligente de viagens corporativas e acadêmicas. Unimos tecnologia e atendimento humano para oferecer as melhores condições do mercado.
         </p>
       </div>
       
       <!-- Serviços -->
       <div>
-        <h4 class="font-bold mb-4 text-purple-100">Serviços</h4>
-        <ul class="space-y-2 text-sm text-purple-200">
-          <li><a href="/servicos.html" class="hover:text-white transition">Viagens Corporativas</a></li>
-          <li><a href="/servicos.html" class="hover:text-white transition">Mobilidade Acadêmica</a></li>
-          <li><a href="/servicos.html" class="hover:text-white transition">Gestão de Gastos</a></li>
+        <h4 class="font-bold mb-4 text-emerald-100">Serviços</h4>
+        <ul class="space-y-2.5 text-sm text-emerald-100/80">
+          <li><a href="/servicos.html" class="hover:text-white transition hover:translate-x-0.5 inline-block">Viagens Corporativas</a></li>
+          <li><a href="/servicos.html" class="hover:text-white transition hover:translate-x-0.5 inline-block">Mobilidade Acadêmica</a></li>
+          <li><a href="/servicos.html" class="hover:text-white transition hover:translate-x-0.5 inline-block">Gestão de Gastos</a></li>
         </ul>
       </div>
       
       <!-- Contato -->
       <div>
-        <h4 class="font-bold mb-4 text-purple-100">Contato</h4>
-        <ul class="space-y-2 text-sm text-purple-200">
-          <li><a href="/contato.html" class="hover:text-white transition">Solicitar Cotação</a></li>
-          <li><a href="/contato.html" class="hover:text-white transition">Seja um Parceiro</a></li>
-          <li><a href="mailto:contato@hospped.com.br" class="hover:text-white transition">contato@hospped.com.br</a></li>
+        <h4 class="font-bold mb-4 text-emerald-100">Contato</h4>
+        <ul class="space-y-2.5 text-sm text-emerald-100/80">
+          <li><a href="/contato.html" class="hover:text-white transition hover:translate-x-0.5 inline-block">Solicitar Cotação</a></li>
+          <li><a href="/contato.html" class="hover:text-white transition hover:translate-x-0.5 inline-block">Seja um Parceiro</a></li>
+          <li><a href="mailto:contato@hospped.com.br" class="hover:text-white transition hover:translate-x-0.5 inline-block">contato@hospped.com.br</a></li>
         </ul>
       </div>
     </div>
     
     <!-- Barra Inferior -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-purple-700/50 text-center text-xs text-purple-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-emerald-700/30 text-center text-xs text-emerald-200/70">
       &copy; 2026 Hospped by HotelsBook. Todos os direitos reservados.
     </div>
   </footer>
 
-  <!-- Script opcional para menu mobile (pode ser expandido depois) -->
+  <!-- Script para menu mobile -->
   <script>
-    // Toggle simples para menu mobile (se quiser implementar)
     document.querySelector('button[aria-label="Menu"]')?.addEventListener('click', function() {
       const nav = document.querySelector('nav');
       if (nav) {
@@ -147,6 +151,8 @@
         nav.classList.toggle('p-4');
         nav.classList.toggle('shadow-lg');
         nav.classList.toggle('flex-col');
+        nav.classList.toggle('border-t');
+        nav.classList.toggle('border-hospped-primary/10');
       }
     });
   </script>

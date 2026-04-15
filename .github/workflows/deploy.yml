@@ -14,7 +14,7 @@ permissions:
 # Concorrência: cancela builds anteriores se um novo for iniciado
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true  # Economiza recursos ao cancelar builds obsoletos
 
 jobs:
   build:
@@ -46,6 +46,16 @@ jobs:
       
       - name: Gerar o Site (Pelican Build)
         run: pelican content -o output -s pelicanconf.py
+        env:
+          PELICAN_ENV: production  # Garante configurações de produção
+      
+      - name: Validar output gerado
+        run: |
+          if [ ! -d "output" ] || [ -z "$(ls -A output)" ]; then
+            echo "Erro: Pasta output está vazia ou não foi gerada"
+            exit 1
+          fi
+          echo "Output válido com $(ls output | wc -l) arquivos"
       
       - name: Upload do Artifact (Páginas)
         uses: actions/upload-pages-artifact@v3

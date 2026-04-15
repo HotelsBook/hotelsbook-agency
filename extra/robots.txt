@@ -1,27 +1,50 @@
 # Robots.txt - Hospped by HotelsBook
 # Última atualização: Abril 2026
+# Paleta: Jade Imperial | Branding: Premium & Sustentável
 
-# Permitir todos os crawlers
+# =============================================================================
+# REGRAS GERAIS
+# =============================================================================
 User-agent: *
 Allow: /
 
-# Bloquear áreas administrativas ou de desenvolvimento (se existirem)
+# Bloquear áreas internas ou arquivos sensíveis
 Disallow: /admin/
 Disallow: /drafts/
 Disallow: /theme/
+Disallow: /pelican/
+Disallow: /extra/
 Disallow: /*.json$
+Disallow: /*.py$
+Disallow: /tags/
+Disallow: /category/
+Disallow: /archives.html
 
-# Crawlers específicos (opcional - otimização)
-# Googlebot: pode rastrear tudo para melhor indexação
+# =============================================================================
+# CRAWLERS ESPECÍFICOS (Otimização)
+# =============================================================================
+
+# Googlebot: prioridade máxima para indexação
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
 # Bingbot: também permitido
 User-agent: Bingbot
 Allow: /
 
-# Atraso entre requisições (politeness - opcional)
+# =============================================================================
+# CORTESIA DE RASTREAMENTO (Politeness)
+# =============================================================================
+# Atraso padrão para bots genéricos (evita sobrecarga no GitHub Pages)
 Crawl-delay: 1
 
-# Sitemap atualizado para a nova marca
+# =============================================================================
+# SITEMAP
+# =============================================================================
+# ⚠️ IMPORTANTE: Esta URL deve bater EXATAMENTE com SITEURL em pelicanconf.py
 Sitemap: https://hospped.github.io/sitemap.xml
+
+# Alternativas conforme seu domínio real:
+# • Domínio próprio: Sitemap: https://www.hospped.com.br/sitemap.xml
+# • GitHub Pages com path: Sitemap: https://usuario.github.io/hospped/sitemap.xml

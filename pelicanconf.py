@@ -27,6 +27,24 @@ SLUGIFY_SUBSTITUTE = {  # Remove caracteres especiais dos slugs
 }
 
 # =============================================================================
+# PALETA DE CORES - JADE IMPERIAL (Hidden Gem 2026)
+# =============================================================================
+# Inspirada em tendências premium de bem-estar e natureza.
+# Diferencia a Hospped das OTAs tradicionais (azuis) com sofisticação.
+
+COLORS = {
+    'primary': '#2A5D5E',        # Deep Jade: serenidade, exclusividade
+    'primary_hover': '#1f4a4b',  # Hover do jade (15% mais escuro)
+    'accent': '#D4AF37',         # Soft Gold: botões, CTAs, destaques
+    'accent_hover': '#b8962e',   # Hover do dourado (15% mais escuro)
+    'bg': '#F0F0E9',             # Cloud Dancer: fundo quente e confortável
+    'text': '#333333',           # Charcoal: texto principal para leitura
+    'text_light': '#666666',     # Texto secundário/cinza
+    'text_on_primary': '#FFFFFF',# Texto sobre fundo jade
+    'text_on_accent': '#333333', # Texto sobre fundo dourado
+}
+
+# =============================================================================
 # MENU DE NAVEGAÇÃO
 # =============================================================================
 
@@ -131,12 +149,13 @@ DEFAULT_PAGINATION = 10  # Não usado em site sem blog, mas mantido por padrão
 # CONFIGURAÇÕES ADICIONAIS DE TEMA
 # =============================================================================
 
-# Variáveis globais disponíveis em todos os templates
+# Variáveis globais disponíveis em todos os templates Jinja2
 TEMPLATE_VISIBLE_SETTINGS = {
     'SITENAME': SITENAME,
     'SITESUBTITLE': SITESUBTITLE,
     'SITEURL': SITEURL,
     'AUTHOR': AUTHOR,
+    'COLORS': COLORS,  # Paleta Jade Imperial disponível nos templates
 }
 
 # =============================================================================

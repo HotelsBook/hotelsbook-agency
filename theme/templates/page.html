@@ -3,27 +3,39 @@
 {% block content %}
 <section class="max-w-4xl mx-auto px-4 py-16">
   
-  <!-- Título da Página com Nova Cor -->
+  <!-- Título da Página com Deep Jade -->
   <h1 class="text-3xl md:text-4xl font-extrabold text-hospped-primary mb-8 leading-tight">
     {{ page.title }}
   </h1>
   
-  <!-- Conteúdo da Página com Tipografia Otimizada -->
-  <article class="prose prose-lg max-w-none text-gray-700 leading-relaxed 
+  <!-- Conteúdo da Página com Tipografia Otimizada para Jade Imperial -->
+  <article class="prose prose-lg max-w-none 
+                  text-hospped-text 
+                  leading-relaxed
                   prose-headings:text-hospped-primary 
-                  prose-a:text-hospped-secondary 
+                  prose-headings:font-semibold
+                  prose-a:text-hospped-accent 
                   prose-a:no-underline 
-                  prose-a:hover:text-hospped-secondaryHover 
+                  prose-a:hover:text-hospped-accentHover 
+                  prose-a:hover:underline
                   prose-strong:text-hospped-primary
+                  prose-em:text-hospped-textLight
                   prose-ul:list-disc 
                   prose-ol:list-decimal 
-                  prose-li:marker:text-hospped-secondary">
+                  prose-li:marker:text-hospped-accent
+                  prose-blockquote:border-l-hospped-primary
+                  prose-blockquote:text-hospped-textLight
+                  prose-code:text-hospped-primary
+                  prose-pre:bg-hospped-primary/5
+                  prose-pre:text-hospped-text
+                  prose-img:rounded-lg
+                  prose-img:shadow-sm">
     {{ page.content }}
   </article>
   
-  <!-- Divider Decorativo (opcional) -->
+  <!-- Divider Decorativo + Data de Atualização -->
   <div class="mt-12 pt-8 border-t border-hospped-primary/20">
-    <p class="text-xs text-gray-400">
+    <p class="text-xs text-hospped-textLight">
       Última atualização: {{ page.locale_date|default(page.date) }}
     </p>
   </div>
