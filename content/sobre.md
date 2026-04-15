@@ -134,7 +134,8 @@ Status: published
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="text-3xl font-bold mb-4">Sua viagem corporativa merece mais do que um robô.</h2>
     <p class="text-emerald-50/90 mb-8">Solicite uma cotação e descubra como podemos otimizar sua logística de viagens hoje.</p>
-    <a href="/contato.html" class="bg-[#D4AF37] hover:bg-[#b8962e] text-[#333333] font-bold py-4 px-10 rounded-lg transition inline-block shadow-lg border border-[#D4AF37]/30">
+    <!-- ✅ Link relativo corrigido -->
+    <a href="./contato.html" class="bg-[#D4AF37] hover:bg-[#b8962e] text-[#333333] font-bold py-4 px-10 rounded-lg transition inline-block shadow-lg border border-[#D4AF37]/30">
       Falar com um Especialista
     </a>
   </div>

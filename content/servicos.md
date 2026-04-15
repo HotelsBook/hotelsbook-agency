@@ -11,6 +11,7 @@ Status: published
   "@type": "TravelAgency",
   "name": "Hospped",
   "alternateName": "Hospped by HotelsBook",
+  "url": "https://hotelsbook.github.io/hotelsbook-agency",
   "makesOffer": [
     {
       "@type": "Offer",
@@ -46,7 +47,9 @@ Status: published
     <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Soluções em gestão de viagens com <span class="text-[#D4AF37]">negociação direta</span> e <span class="text-[#D4AF37]">atendimento humano</span></h1>
     <p class="text-xl text-emerald-50/90 mb-10 max-w-3xl mx-auto">Oferecemos reservas corporativas e acadêmicas com tarifas exclusivas, flexibilidade real e controle total de gastos — sem burocracia de plataforma.</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="/contato.html" class="bg-[#D4AF37] hover:bg-[#b8962e] text-[#333333] font-bold py-4 px-8 rounded-lg transition duration-300 shadow-lg border border-[#D4AF37]/30">Solicitar Cotação</a>
+      <!-- ✅ Link relativo corrigido -->
+      <a href="./contato.html" class="bg-[#D4AF37] hover:bg-[#b8962e] text-[#333333] font-bold py-4 px-8 rounded-lg transition duration-300 shadow-lg border border-[#D4AF37]/30">Solicitar Cotação</a>
+      <!-- ✅ Âncora interna pode manter (mesma página) -->
       <a href="#como-funciona" class="border-2 border-white hover:bg-white hover:text-[#2A5D5E] font-semibold py-4 px-8 rounded-lg transition duration-300">Ver Como Funciona</a>
     </div>
   </div>
@@ -55,7 +58,7 @@ Status: published
 <!-- PLACEHOLDER PARA IMAGEM DE DESTAQUE -->
 <!-- 
 <section class="max-w-6xl mx-auto px-4 py-8">
-  <img src="/images/servicos-hero.jpg" alt="Equipe Hospped gerenciando reservas corporativas" class="w-full h-auto rounded-xl shadow-lg object-cover">
+  <img src="./images/servicos-hero.jpg" alt="Equipe Hospped gerenciando reservas corporativas" class="w-full h-auto rounded-xl shadow-lg object-cover">
   <p class="text-center text-[#666666] text-sm mt-2">[Substituir por imagem real de atendimento ou dashboard]</p>
 </section> 
 -->
@@ -107,7 +110,8 @@ Status: published
           <li class="flex items-start"><span class="text-[#D4AF37] mr-2 mt-1">▸</span> Suporte prioritário para alterações de última hora</li>
           <li class="flex items-start"><span class="text-[#D4AF37] mr-2 mt-1">▸</span> Faturamento unificado ou por viagem</li>
         </ul>
-        <a href="/contato.html" class="inline-block text-[#2A5D5E] font-semibold hover:text-[#D4AF37] hover:underline text-sm">Solicitar proposta corporativa →</a>
+        <!-- ✅ Link relativo corrigido -->
+        <a href="./contato.html" class="inline-block text-[#2A5D5E] font-semibold hover:text-[#D4AF37] hover:underline text-sm">Solicitar proposta corporativa →</a>
       </div>
       
       <!-- ACADÊMICO -->
@@ -123,7 +127,8 @@ Status: published
           <li class="flex items-start"><span class="text-[#D4AF37] mr-2 mt-1">▸</span> Gestão de grupos para eventos e visitas técnicas</li>
           <li class="flex items-start"><span class="text-[#D4AF37] mr-2 mt-1">▸</span> Emissão de NF para prestação de contas institucional</li>
         </ul>
-        <a href="/contato.html" class="inline-block text-[#2A5D5E] font-semibold hover:text-[#D4AF37] hover:underline text-sm">Propor parceria institucional →</a>
+        <!-- ✅ Link relativo corrigido -->
+        <a href="./contato.html" class="inline-block text-[#2A5D5E] font-semibold hover:text-[#D4AF37] hover:underline text-sm">Propor parceria institucional →</a>
       </div>
       
     </div>
@@ -225,7 +230,8 @@ Status: published
   <div class="max-w-4xl mx-auto text-center">
     <h2 class="text-3xl font-bold mb-4">Pronto para otimizar suas viagens?</h2>
     <p class="text-emerald-50/90 mb-8">Solicite uma análise gratuita das suas demandas e receba uma proposta com tarifas negociadas em até 24h.</p>
-    <a href="/contato.html" class="bg-[#D4AF37] hover:bg-[#b8962e] text-[#333333] font-bold py-4 px-10 rounded-lg transition inline-block shadow-lg border border-[#D4AF37]/30">
+    <!-- ✅ Link relativo corrigido -->
+    <a href="./contato.html" class="bg-[#D4AF37] hover:bg-[#b8962e] text-[#333333] font-bold py-4 px-10 rounded-lg transition inline-block shadow-lg border border-[#D4AF37]/30">
       Falar com um Especialista
     </a>
   </div>
