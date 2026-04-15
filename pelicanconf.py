@@ -52,9 +52,9 @@ COLORS = {
 
 MENUITEMS = [
     ('Início', '/'),
-    ('Serviços', '/servicos.html'),
-    ('Sobre', '/sobre.html'),
-    ('Contato', '/contato.html'),
+    ('Serviços', './servicos.html'),
+    ('Sobre', './sobre.html'),
+    ('Contato', './contato.html'),
 ]
 
 # =============================================================================
